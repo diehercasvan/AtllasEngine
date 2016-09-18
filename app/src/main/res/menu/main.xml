@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btnInfo"
+        android:icon="@drawable/ic_info"
+        android:orderInCategory="100"
+        android:title="@string/items1"
+        app:showAsAction="ifRoom"
+
+        ></item>
+    <item
+        android:id="@+id/btnSignaling"
+        android:icon="@drawable/ic_library_books"
+        android:orderInCategory="200"
+        android:title="@string/items2"
+        app:showAsAction="ifRoom"
+
+        ></item>
+    <item
+        android:id="@+id/btnShare"
+        android:icon="@drawable/ic_menu_share"
+        android:orderInCategory="300"
+        android:title="@string/items3"
+        app:showAsAction="ifRoom"
+
+        ></item>
+    <item
+        android:id="@+id/btnTool"
+        android:icon="@drawable/ic_menu_manage"
+        android:orderInCategory="400"
+        android:title="@string/items4"
+        app:showAsAction="ifRoom"
+
+        ></item>
+
+
+</menu>

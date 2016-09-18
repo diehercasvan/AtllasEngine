@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">"Atllas Engine "</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    //Menu items
+    <string name="items1">Information</string>
+    <string name="items2">Signpost</string>
+    <string name="items3">Share</string>
+    <string name="items4">Tools</string>
+    //Text backboard
+    <string name="textSample">Write text</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
