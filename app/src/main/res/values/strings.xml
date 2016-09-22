@@ -9,7 +9,7 @@
     //Menu items
     <string name="items1">Information</string>
     <string name="items2">Signpost</string>
-    <string name="items3">Share</string>
+    <string name="items3">More content</string>
     <string name="items4">Tools</string>
     //Text backboard
     <string name="textSample">Write text</string>

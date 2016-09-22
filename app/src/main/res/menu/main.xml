@@ -5,25 +5,28 @@
     <item
         android:id="@+id/btnInfo"
         android:icon="@drawable/ic_info"
-        android:orderInCategory="2"
+        android:orderInCategory="1"
         android:title="@string/items1"
         app:showAsAction="ifRoom"
+        android:visible="true"
 
         ></item>
     <item
-        android:id="@+id/btnShare"
-        android:icon="@drawable/ic_menu_share"
-        android:orderInCategory="1"
+        android:id="@+id/btnMoreImage"
+        android:icon="@drawable/ic_mms"
+        android:orderInCategory="2"
         android:title="@string/items3"
         app:showAsAction="ifRoom"
+        android:visible="true"
 
         ></item>
     <item
         android:id="@+id/btnTool"
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/ic_tool"
         android:orderInCategory="3"
         android:title="@string/items4"
         app:showAsAction="ifRoom"
+        android:visible="true"
 
         ></item>
 

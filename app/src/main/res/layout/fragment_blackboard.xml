@@ -18,6 +18,17 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true">
             <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnToolShare"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_weight="2"
+                android:elevation="4dp"
+                app:fabSize="mini"
+                android:src="@drawable/ic_menu_share"
+                android:visibility="visible"
+                android:foregroundGravity="center_vertical" />
+            <android.support.design.widget.FloatingActionButton
                 android:id="@+id/btnToolText"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -26,9 +37,7 @@
                 android:elevation="4dp"
                 app:fabSize="mini"
                 android:src="@drawable/ic_font_download"
-
                 android:foregroundGravity="center_vertical" />
-
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/btnToolImage"
                 android:layout_width="wrap_content"
@@ -38,9 +47,7 @@
                 android:elevation="4dp"
                 app:fabSize="mini"
                 android:src="@drawable/ic_image"
-
                 android:foregroundGravity="center_vertical" />
-
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/btnToolBlackboard"
                 android:layout_width="wrap_content"
@@ -51,8 +58,6 @@
                 app:fabSize="mini"
                 android:src="@drawable/ic_create"
                 android:visibility="visible"
-
-
                 android:foregroundGravity="center_vertical" />
 
         </LinearLayout>

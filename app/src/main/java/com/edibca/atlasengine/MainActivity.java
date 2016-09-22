@@ -3,24 +3,22 @@ package com.edibca.atlasengine;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.PopupMenu;
-import android.view.MenuInflater;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -28,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FrameLayout frlBlackboard;
     private FrameLayout frg_textInfo;
     private ImageView imgBtnTextInfo;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         loadDrawerLayout();
         loadNavigationView();
         loadView();
+
 
     }
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadNavigationView() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -110,14 +110,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
             case R.id.btnInfo:
-                if(frg_textInfo.getVisibility()==View.GONE){
+                if (frg_textInfo.getVisibility() == View.GONE) {
                     animationTextInfo(1, frg_textInfo);
-                }else{
+                } else {
                     animationTextInfo(0, frg_textInfo);
                 }
 
                 break;
-            case R.id.btnShare:
+            case R.id.btnMoreImage:
                 break;
             case R.id.btnTool:
                 selectionTool(4);
@@ -179,17 +179,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
-    private void animationTextInfo(int itype, FrameLayout fragment ){
-        Animation animation=null;
+
+    private void animationTextInfo(int itype, FrameLayout fragment) {
+        Animation animation = null;
         fragment.clearAnimation();
-        if(itype==0){
+        if (itype == 0) {
             animation = AnimationUtils.loadAnimation(getApplicationContext(),
                     R.anim.slide_down);
 
             fragment.setVisibility(View.GONE);
 
-        }
-        else{
+        } else {
             animation = AnimationUtils.loadAnimation(getApplicationContext(),
                     R.anim.slide_up);
             fragment.setVisibility(View.VISIBLE);

@@ -27,9 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
-
         >
-
         <fragment
             android:id="@+id/fragment_textInfo"
             android:name="fragment.TextInfoFragment"
@@ -51,7 +49,8 @@
             android:name="fragment.BlackboardFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_blackboard" />
+            tools:layout="@layout/fragment_blackboard"
+            android:layout_gravity="center" />
     </FrameLayout>
 
 
