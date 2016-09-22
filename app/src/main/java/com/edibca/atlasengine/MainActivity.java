@@ -4,6 +4,7 @@ package com.edibca.atlasengine;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -15,12 +16,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Toolbar toolbar;
     private FrameLayout frlBlackboard;
+    private FrameLayout frg_textInfo;
+    private ImageView imgBtnTextInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +41,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadView() {
-        frlBlackboard = (FrameLayout) findViewById(R.id.containerBlackboard);
+        frlBlackboard = (FrameLayout) findViewById(R.id.container_blackboard);
+        frg_textInfo = (FrameLayout) findViewById(R.id.container_textInfo);
+
+
     }
 
     private void loadToolbar() {
@@ -97,9 +107,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // as you specify a parent activity in AndroidManifest.xml.
 
         switch (item.getItemId()) {
+
+
             case R.id.btnInfo:
-                break;
-            case R.id.btnSignaling:
+                if(frg_textInfo.getVisibility()==View.GONE){
+                    animationTextInfo(1, frg_textInfo);
+                }else{
+                    animationTextInfo(0, frg_textInfo);
+                }
+
                 break;
             case R.id.btnShare:
                 break;
@@ -154,5 +170,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+        }
+
+    }
+    private void animationTextInfo(int itype, FrameLayout fragment ){
+        Animation animation=null;
+        fragment.clearAnimation();
+        if(itype==0){
+            animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                    R.anim.slide_down);
+
+            fragment.setVisibility(View.GONE);
+
+        }
+        else{
+            animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                    R.anim.slide_up);
+            fragment.setVisibility(View.VISIBLE);
+        }
+        fragment.startAnimation(animation);
+
     }
 }
