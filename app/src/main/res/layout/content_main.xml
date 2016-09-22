@@ -18,18 +18,42 @@
         android:id="@+id/container_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="visible">
 
+        <fragment
+            android:id="@+id/fragment_InfoImage1"
+            android:name="fragment.GalleryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ObsoleteLayoutParam"
+            android:background="@android:color/background_dark"
+            tools:layout="@layout/fragment_gallery" />
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/container_textInfo"
+        android:id="@+id/container_InfoImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:visibility="gone"
+        >
+        <fragment
+            android:id="@+id/fragment_InfoImage"
+            android:name="fragment.ImagenFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="ObsoleteLayoutParam"
+            tools:layout="@layout/fragment_text_info" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/container_Info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
         >
         <fragment
-            android:id="@+id/fragment_textInfo"
+            android:id="@+id/fragment_Info"
             android:name="fragment.TextInfoFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

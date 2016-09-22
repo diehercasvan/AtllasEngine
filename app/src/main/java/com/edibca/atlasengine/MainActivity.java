@@ -20,11 +20,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Toolbar toolbar;
     private FrameLayout frlBlackboard;
-    private FrameLayout frg_textInfo;
+    private FrameLayout frg_Info, frg_Info_image;
     private ImageView imgBtnTextInfo;
     private NavigationView navigationView;
 
@@ -41,8 +42,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadView() {
+
+        General.General.ACTIVITY=this;
+        General.General.CONTEXT=this;
+
         frlBlackboard = (FrameLayout) findViewById(R.id.container_blackboard);
-        frg_textInfo = (FrameLayout) findViewById(R.id.container_textInfo);
+        frg_Info = (FrameLayout) findViewById(R.id.container_Info);
+        frg_Info_image = (FrameLayout) findViewById(R.id.container_InfoImage);
+
 
 
     }
@@ -110,14 +117,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
             case R.id.btnInfo:
-                if (frg_textInfo.getVisibility() == View.GONE) {
-                    animationTextInfo(1, frg_textInfo);
-                } else {
-                    animationTextInfo(0, frg_textInfo);
-                }
+                selectionFragmentInfo(0);
 
                 break;
             case R.id.btnMoreImage:
+
+                selectionFragmentInfo(1);
                 break;
             case R.id.btnTool:
                 selectionTool(4);
@@ -180,6 +185,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    private void selectionFragmentInfo(int iTypeFragment) {
+
+        if (iTypeFragment == 0) {
+            if (frg_Info.getVisibility() == View.VISIBLE) {
+                animationImageInfo(0, frg_Info);
+            } else {
+                animationImageInfo(1, frg_Info);
+                if (frg_Info_image.getVisibility() == View.VISIBLE) {
+                    animationTextInfo(0, frg_Info_image);
+                }
+            }
+
+        } else {
+            if (frg_Info_image.getVisibility() == View.VISIBLE) {
+                animationTextInfo(0, frg_Info_image);
+            } else {
+                animationTextInfo(1, frg_Info_image);
+                if (frg_Info.getVisibility() == View.VISIBLE) {
+                    animationImageInfo(0, frg_Info);
+                }
+            }
+        }
+    }
+
     private void animationTextInfo(int itype, FrameLayout fragment) {
         Animation animation = null;
         fragment.clearAnimation();
@@ -192,6 +221,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             animation = AnimationUtils.loadAnimation(getApplicationContext(),
                     R.anim.slide_up);
+            fragment.setVisibility(View.VISIBLE);
+        }
+        fragment.startAnimation(animation);
+
+    }
+
+    private void animationImageInfo(int itype, FrameLayout fragment) {
+        Animation animation = null;
+        fragment.clearAnimation();
+        if (itype == 0) {
+            animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                    R.anim.slide_right);
+
+            fragment.setVisibility(View.GONE);
+
+        } else {
+            animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                    R.anim.slide_left);
             fragment.setVisibility(View.VISIBLE);
         }
         fragment.startAnimation(animation);
