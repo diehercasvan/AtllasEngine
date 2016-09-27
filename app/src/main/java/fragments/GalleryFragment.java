@@ -1,4 +1,4 @@
-package fragment;
+package fragments;
 
 
 import android.content.Context;
@@ -16,7 +16,7 @@ import com.edibca.atlasengine.R;
 import java.util.ArrayList;
 
 import DTO.DTO_Images;
-import General.General;
+import class_project.*;
 import adapter.ListAdapter;
 
 /**

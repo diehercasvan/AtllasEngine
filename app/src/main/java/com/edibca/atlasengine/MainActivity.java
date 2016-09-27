@@ -19,6 +19,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import class_project.*;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        General.ACTIVITY = this;
+        General.CONTEXT = this;
+
         setContentView(R.layout.activity_main);
         loadToolbar();
         loadDrawerLayout();
@@ -43,8 +49,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void loadView() {
 
-        General.General.ACTIVITY=this;
-        General.General.CONTEXT=this;
 
         frlBlackboard = (FrameLayout) findViewById(R.id.container_blackboard);
         frg_Info = (FrameLayout) findViewById(R.id.container_Info);

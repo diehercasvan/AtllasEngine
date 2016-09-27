@@ -7,4 +7,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="icons">24dp</dimen>
+    <dimen name="sizeButtonColor">50dp</dimen>
+    <dimen name="sizeImage">80dp</dimen>
 </resources>

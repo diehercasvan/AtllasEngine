@@ -1,41 +1,51 @@
-package fragment;
+package fragments;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 
 import com.edibca.atlasengine.*;
-import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
+
+
+import class_project.*;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlackboardFragment extends Fragment implements View.OnClickListener {
+public class ContainerFragment extends Fragment implements View.OnClickListener {
 
     private View view;
     private LinearLayout[] linearLayouts;
-    private FloatingActionButton [] floatingActionButtons;
+    private FloatingActionButton[] floatingActionButtons;
+    private RelativeLayout containerColor;
+    private String sListColor[];
+    private Activity activity;
 
-    public BlackboardFragment() {
+    public ContainerFragment() {
         // Required empty public constructor
+        this.activity = General.ACTIVITY;
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_blackboard, container, false);
+        view = inflater.inflate(R.layout.fragment_container, container, false);
         loadView();
         return view;
     }
 
     private void loadView() {
+
+
         linearLayouts = new LinearLayout[2];
         linearLayouts[0] = (LinearLayout) view.findViewById(R.id.contToolBlackboard);
         linearLayouts[1] = (LinearLayout) view.findViewById(R.id.contCreateText);
@@ -46,9 +56,8 @@ public class BlackboardFragment extends Fragment implements View.OnClickListener
         for (int i = 0; i < floatingActionButtons.length; i++) {
             floatingActionButtons[i].setOnClickListener(this);
         }
-
-
-
+        containerColor = (RelativeLayout) view.findViewById(R.id.containerColor);
+        containerColor.addView(new Colors(activity).createListColor());
     }
 
     @Override
@@ -83,7 +92,7 @@ public class BlackboardFragment extends Fragment implements View.OnClickListener
                 }
                 break;
             case 2:
-
+                loadImageGridView();
                 break;
             case 3:
                 if (linearLayouts[1].getVisibility() == View.GONE) {
@@ -95,5 +104,9 @@ public class BlackboardFragment extends Fragment implements View.OnClickListener
                 break;
 
         }
+    }
+    private void loadImageGridView() {
+
+        FragmentsAlert.setDialogFragment(0);
     }
 }
