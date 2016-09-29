@@ -24,6 +24,10 @@ public  class FragmentsAlert {
                 FragmentToolText fragmentToolText = new FragmentToolText();
                 dialogFragment=fragmentToolText;
                 break;
+            case 3:
+                FragmentToolImage fragmentToolImage = new FragmentToolImage();
+                dialogFragment=fragmentToolImage;
+                break;
         }
         dialogFragment.show(fm, "Sample Fragment");
 

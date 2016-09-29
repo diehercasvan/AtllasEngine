@@ -197,6 +197,8 @@ public class ContainerFragment extends Fragment implements View.OnClickListener 
                 }
                 break;
             case 2:
+                linearLayouts[0].setVisibility(View.GONE);
+                linearLayouts[1].setVisibility(View.GONE);
                 loadImageGridView();
                 break;
             case 3:

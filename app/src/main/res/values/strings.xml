@@ -17,6 +17,7 @@
     <string name="textSample">Write text</string>
     <string name="message_0">Digite un texto por favor</string>
     <string name="message_dialog_text">Text Options</string>
+    <string name="message_dialog_image">Image Options</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

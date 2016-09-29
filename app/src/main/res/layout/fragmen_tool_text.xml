@@ -138,41 +138,41 @@
                 </LinearLayout>
             <LinearLayout
 
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnPrevious"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_reply" />
 
-                <ImageButton
-                    android:id="@+id/btnPrevious"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_reply" />
+            <ImageButton
 
-                <ImageButton
+                android:id="@+id/btnUpdateText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_spellcheck" />
 
-                    android:id="@+id/btnUpdateText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_spellcheck" />
-
-                <ImageButton
-                    android:id="@+id/btnDestroyText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_cancel" />
+            <ImageButton
+                android:id="@+id/btnDestroyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_cancel" />
 
 
-            </LinearLayout>
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

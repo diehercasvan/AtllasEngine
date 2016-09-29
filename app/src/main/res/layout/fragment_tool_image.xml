@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragments.FragmentToolImage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imgUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+            android:id="@+id/sizeUpdateImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgUpdate"
+            android:layout_margin="10dp"
+            app:dsb_allowTrackClickToDrag="true"
+            app:dsb_indicatorColor="@color/colorAccent"
+            app:dsb_indicatorTextAppearance="@style/CustomFloaterTextAppearance"
+            app:dsb_max="20"
+            app:dsb_min="5"
+            app:dsb_progressColor="@color/colorPrimary"
+            app:dsb_rippleColor="#FF7788FF"
+            app:dsb_value="0" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sizeUpdateImage"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnPreviousToolImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_reply" />
+
+            <ImageButton
+
+                android:id="@+id/btnUpdateImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_spellcheck" />
+
+            <ImageButton
+                android:id="@+id/btnDestroyImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_cancel" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</FrameLayout>

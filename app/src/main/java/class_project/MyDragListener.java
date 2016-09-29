@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 
-import com.edibca.atlasengine.R;
-
 import fragments.FragmentsAlert;
 
 /**
@@ -97,6 +95,7 @@ public class MyDragListener implements View.OnDragListener {
                     General.IMAGE_VIEW.setOnTouchListener(null);
                     General.IMAGE_VIEW.setOnClickListener(new ClickListener());
                     General.bValidateSelectionClick = true;
+                    FragmentsAlert.setDialogFragment(3);
                     General.RELATIVE_LAYOUT.setBackground(null);
 
                     break;

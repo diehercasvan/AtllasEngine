@@ -56,7 +56,6 @@ public class Screen_Share {
                 + File.separator + sNameFolder+"/screenshot.png";
         file = new File(sFilePath);
 
-
         try {
             fileOutputStream = new FileOutputStream(file);
 
