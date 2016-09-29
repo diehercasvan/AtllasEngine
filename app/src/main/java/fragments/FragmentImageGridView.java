@@ -111,7 +111,7 @@ public class FragmentImageGridView extends DialogFragment {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 int idImage = v.getId();
 
-                General.alertToast("position" + idImage, 0);
+                //General.alertToast("position" + idImage, 0);
                 createImage(position);
             }
         });
@@ -130,6 +130,7 @@ public class FragmentImageGridView extends DialogFragment {
         imageView.setLayoutParams(params);
 
         General.RELATIVE_LAYOUT.addView(imageView);
+        dismiss();
 
     }
 

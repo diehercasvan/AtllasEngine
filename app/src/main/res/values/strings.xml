@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">"Atllas Engine "</string>
+    <string name="app_name">"Atlas Engine"</string>
+
+    <string name="app_name_information">"Atlas Engine Information"</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,6 +16,8 @@
     //Text backboard
     <string name="textSample">Write text</string>
     <string name="message_0">Digite un texto por favor</string>
+    <string name="message_dialog_text">Text Options</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

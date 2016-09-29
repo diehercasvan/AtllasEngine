@@ -10,9 +10,8 @@ import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
+import com.edibca.atlasengine.My_Canvas;
 import com.edibca.atlasengine.R;
-
-import class_project.*;
 
 /**
  * Created by DIEGO CASALLAS on 4/08/2016.
@@ -23,15 +22,21 @@ public class Colors implements View.OnClickListener {
     private Activity activity;
     private int iContId = 0;
     private EditText editText;
+    private int iSelection=0;
+    private My_Canvas my_canvas;
 
-    public Colors(EditText editText,Activity a) {
+    public Colors(EditText editText, Activity a) {
         this.editText = editText;
         this.activity = a;
+        this.iSelection=0;
 
     }
 
-    public Colors(Activity a) {
+    public Colors(Activity a, My_Canvas my_canva) {
+
         this.activity = a;
+        this.iSelection=1;
+        this.my_canvas=my_canva;
     }
 
     public HorizontalScrollView createListColor() {
@@ -62,14 +67,21 @@ public class Colors implements View.OnClickListener {
             horizontalScrollView.addView(linearLayout);
             return horizontalScrollView;
         }
-        return  null;
+        return null;
     }
 
     @Override
     public void onClick(View view) {
         int iID = view.getId();
         Button button = (Button) view.findViewById(iID);
-      //  general.General.COLOR_SELECTION_STRING = button.getTag().toString();
+        String color=General.COLOR_SELECTION_STRING = button.getTag().toString();
+        if(iSelection==0){
+            editText.setTextColor(Color.parseColor(color));
+        }
+        else if(iSelection==1){
+            my_canvas.setColor(color);
+        }
+
 
 
     }

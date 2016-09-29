@@ -28,8 +28,14 @@ public class General {
     public static float ydpi = 0f;
     public static float densityDpi = 0f;
     public static RelativeLayout RELATIVE_LAYOUT = null;
+    public static RelativeLayout RELATIVE_LAYOUT_SCREEN = null;
     public static int iContIdImage = 0;
     public  static String sTag=null;
+    public  static  String COLOR_SELECTION_STRING=null;
+    public static String ROUTE;
+    public static final String NAME_FOLDER_MAIL="Pictures";
+    public static String[] MAIL_CONTENT= new String []{"","Atlas ",""};
+    public static String NAME_FOLDER="Atlas";
     //References images
     public static int iImageGridView[] =
             {

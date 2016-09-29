@@ -2,6 +2,7 @@ package com.edibca.atlasengine;
 
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -20,9 +21,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import class_project.*;
+import class_project.General;
+import class_project.MyDragListener;
+
+
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -32,13 +35,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FrameLayout frg_Info, frg_Info_image;
     private ImageView imgBtnTextInfo;
     private NavigationView navigationView;
-    private RelativeLayout rly_container_drag;
+    private RelativeLayout rly_container_drag,rly_general_screen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         General.ACTIVITY = this;
         General.CONTEXT = this;
+        General.ROUTE= Environment.getExternalStorageDirectory().getAbsolutePath();
 
         setContentView(R.layout.activity_main);
         loadToolbar();
@@ -54,13 +58,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         frlBlackboard = (FrameLayout) findViewById(R.id.container_blackboard);
 
-
         frg_Info = (FrameLayout) findViewById(R.id.container_Info);
         frg_Info_image = (FrameLayout) findViewById(R.id.container_InfoImage);
 
         rly_container_drag=(RelativeLayout)findViewById(R.id.container_drag);
         rly_container_drag.setOnDragListener(new MyDragListener());
         General.RELATIVE_LAYOUT = rly_container_drag;
+
+        rly_general_screen=(RelativeLayout)findViewById(R.id.Container_fragment_general);
+        General.RELATIVE_LAYOUT_SCREEN=rly_general_screen;
     }
 
     private void loadToolbar() {

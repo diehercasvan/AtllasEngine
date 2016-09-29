@@ -7,9 +7,16 @@
     tools:context="fragments.ContainerFragment">
 
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessParent">
+
+        <com.edibca.atlasengine.My_Canvas
+            android:id="@+id/Canvas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -130,7 +137,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
                             android:src="@drawable/ic_draw"
-
+                            android:tag="button"
                             />
 
                         <ImageButton
@@ -140,7 +147,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
                             android:src="@drawable/ic_draft"
-
+                            android:tag="button"
                             />
 
                         <ImageButton
@@ -149,6 +156,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
+                            android:tag="button"
                             android:src="@drawable/ic_crop" />
 
 
@@ -202,7 +210,7 @@
                 android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:padding="5dp"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <EditText
                     android:id="@+id/edtNewText"

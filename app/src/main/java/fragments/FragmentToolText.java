@@ -38,8 +38,9 @@ public class FragmentToolText extends DialogFragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragmen_tool_text, container, false);
-        getDialog().setTitle("Simple Dialog");
+
         loadView();
+        getDialog().setTitle(activity.getResources().getString(R.string.message_dialog_text));
         return view;
     }
 
