@@ -26,7 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="ObsoleteLayoutParam"
-            android:background="@android:color/background_dark"
             tools:layout="@layout/fragment_gallery" />
     </FrameLayout>
 
@@ -34,11 +33,11 @@
         android:id="@+id/container_InfoImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
+
         <fragment
             android:id="@+id/fragment_InfoImage"
-            android:name="fragments.ImagenFragment"
+            android:name="fragments.ImageFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="ObsoleteLayoutParam"
@@ -49,15 +48,15 @@
         android:id="@+id/container_Info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
-        >
+        android:visibility="gone">
+
         <fragment
             android:id="@+id/fragment_Info"
             android:name="fragments.TextInfoFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:ignore="ObsoleteLayoutParam"
             android:background="@android:color/background_dark"
+            tools:ignore="ObsoleteLayoutParam"
             tools:layout="@layout/fragment_text_info" />
     </FrameLayout>
 
@@ -67,13 +66,19 @@
         android:layout_height="match_parent"
         android:visibility="gone">
 
-        <fragment
-            android:id="@+id/fragment_blackboard"
-            android:name="fragments.ContainerFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_container"
-            android:layout_gravity="center" />
+        <RelativeLayout
+            android:id="@+id/container_drag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/fragment_blackboard"
+                android:name="fragments.ContainerFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                tools:layout="@layout/fragment_container" />
+        </RelativeLayout>
     </FrameLayout>
 
 

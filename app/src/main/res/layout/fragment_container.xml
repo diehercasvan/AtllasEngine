@@ -202,7 +202,7 @@
                 android:layout_margin="5dp"
                 android:orientation="horizontal"
                 android:padding="5dp"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <EditText
                     android:id="@+id/edtNewText"

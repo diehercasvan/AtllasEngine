@@ -19,6 +19,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import class_project.*;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FrameLayout frg_Info, frg_Info_image;
     private ImageView imgBtnTextInfo;
     private NavigationView navigationView;
+    private RelativeLayout rly_container_drag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         frlBlackboard = (FrameLayout) findViewById(R.id.container_blackboard);
+
+
         frg_Info = (FrameLayout) findViewById(R.id.container_Info);
         frg_Info_image = (FrameLayout) findViewById(R.id.container_InfoImage);
 
-
-
+        rly_container_drag=(RelativeLayout)findViewById(R.id.container_drag);
+        rly_container_drag.setOnDragListener(new MyDragListener());
+        General.RELATIVE_LAYOUT = rly_container_drag;
     }
 
     private void loadToolbar() {

@@ -123,10 +123,10 @@ public class FragmentImageGridView extends DialogFragment {
         ImageView imageView = new ImageView(activity);
         imageView.setId(iListImagens[position]);
         imageView.setImageResource(iListImagens[position]);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((int)fSize, (int)fSize);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((int) fSize, (int) fSize);
         params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         imageView.setTag("image");
-        //imageView.setOnClickListener(new ClickListener());
+        imageView.setOnClickListener(new ClickListener());
         imageView.setLayoutParams(params);
 
         General.RELATIVE_LAYOUT.addView(imageView);

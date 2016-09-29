@@ -8,12 +8,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.edibca.atlasengine.*;
 
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import class_project.*;
 
@@ -29,6 +37,9 @@ public class ContainerFragment extends Fragment implements View.OnClickListener 
     private RelativeLayout containerColor;
     private String sListColor[];
     private Activity activity;
+    private ImageButton[] buttons;
+    private EditText edtNewText;
+    private String sDatanewtext;
 
     public ContainerFragment() {
         // Required empty public constructor
@@ -44,6 +55,13 @@ public class ContainerFragment extends Fragment implements View.OnClickListener 
     }
 
     private void loadView() {
+
+        buttons = new ImageButton[1];
+        edtNewText = (EditText) view.findViewById(R.id.edtNewText);
+        buttons[0] = (ImageButton) view.findViewById(R.id.btnOk);
+        for (int i = 0; i < buttons.length; i++) {
+            buttons[i].setOnClickListener(this);
+        }
 
 
         linearLayouts = new LinearLayout[2];
@@ -74,11 +92,49 @@ public class ContainerFragment extends Fragment implements View.OnClickListener 
             case R.id.btnToolText:
                 iSelect = 3;
                 break;
+
+            case R.id.btnOk:
+                sDatanewtext = edtNewText.getText().toString();
+                Pattern pattern = Pattern.compile("^\\s");
+                Matcher matcher = pattern.matcher(sDatanewtext);
+                if (sDatanewtext.equals("") || sDatanewtext.length() == 0 || matcher.find()) {
+                    General.alertToast(R.string.message_0, 1);
+                } else {
+                    createTextView();
+
+                }
+
+                return;
         }
         selectionGroupItems(iSelect);
 
     }
+    private void createTextView() {
+        TextView newTextView = new TextView(activity);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        newTextView.setId(General.iContIdImage);
+        newTextView.setText(sDatanewtext);
+        newTextView.setTag("text");
+        newTextView.setTypeface(null);
+        newTextView.setBackground(null);
+        params.setMargins(3, 3, 3, 3);
+        edtNewText.setText("");
+        newTextView.setPadding(3,3,3,3);
+        newTextView.setLayoutParams(params);
+        newTextView.setOnClickListener(new ClickListener());
 
+        //Toast.makeText(activity,"font Size "+newTextView.getTextSize(),Toast.LENGTH_LONG).show();
+        General.RELATIVE_LAYOUT.addView(newTextView);
+        linearLayouts[1] .setVisibility(View.GONE);
+        hideSoftKeyboard();
+        General.iContIdImage++;
+
+    }
+    public void hideSoftKeyboard() {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(General.RELATIVE_LAYOUT.getWindowToken(), 0);
+    }
     private void selectionGroupItems(int iSelection) {
 
 
@@ -105,6 +161,7 @@ public class ContainerFragment extends Fragment implements View.OnClickListener 
 
         }
     }
+
     private void loadImageGridView() {
 
         FragmentsAlert.setDialogFragment(0);
