@@ -6,14 +6,15 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+
 import com.edibca.atlasengine.*;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class TextInfoFragment extends Fragment {
 
+    private WebView view;
 
     public TextInfoFragment() {
         // Required empty public constructor

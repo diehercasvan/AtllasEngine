@@ -13,10 +13,11 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.edibca.atlasengine.*;
+import com.edibca.atlasengine.R;
 
 import adapter.ImageAdapter;
-import class_project.*;
+import class_project.ClickListener;
+import class_project.General;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -121,13 +122,18 @@ public class FragmentImageGridView extends DialogFragment {
         float fSize = activity.getResources().getDimension(R.dimen.sizeImage);
 
         ImageView imageView = new ImageView(activity);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((int) fSize, (int) fSize);
+
         imageView.setId(iListImagens[position]);
         imageView.setImageResource(iListImagens[position]);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams((int) fSize, (int) fSize);
         params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-        imageView.setTag("image");
-        imageView.setOnClickListener(new ClickListener());
         imageView.setLayoutParams(params);
+        imageView.setTag("image");
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setMaxHeight(50);
+        imageView.setMaxWidth(50);
+        imageView.setOnClickListener(new ClickListener());
+
 
         General.RELATIVE_LAYOUT.addView(imageView);
         dismiss();

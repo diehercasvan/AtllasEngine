@@ -7,39 +7,89 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
-
-        <ImageView
-            android:id="@+id/imgUpdate"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ContImgSize"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="36dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:orientation="horizontal"
+            android:layout_below="@+id/imgUpdate">
 
-        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
-            android:id="@+id/sizeUpdateImage"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:src="@drawable/ic_pages"
+                tools:ignore="ContentDescription">
+
+            </ImageView>
+
+            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                android:id="@+id/sizeUpdateSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgUpdate"
+                android:layout_weight="5"
+                android:layout_margin="10dp"
+                app:dsb_allowTrackClickToDrag="true"
+                app:dsb_indicatorColor="@color/colorAccent"
+                app:dsb_indicatorTextAppearance="@style/CustomFloaterTextAppearance"
+                app:dsb_max="50"
+                app:dsb_min="5"
+                app:dsb_progressColor="@color/colorPrimary"
+                app:dsb_rippleColor="#FF7788FF"
+                app:dsb_value="0"
+                tools:ignore="ObsoleteLayoutParam" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ContImgRotate"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imgUpdate"
-            android:layout_margin="10dp"
-            app:dsb_allowTrackClickToDrag="true"
-            app:dsb_indicatorColor="@color/colorAccent"
-            app:dsb_indicatorTextAppearance="@style/CustomFloaterTextAppearance"
-            app:dsb_max="20"
-            app:dsb_min="5"
-            app:dsb_progressColor="@color/colorPrimary"
-            app:dsb_rippleColor="#FF7788FF"
-            app:dsb_value="0" />
+            android:orientation="horizontal"
+            android:layout_below="@+id/ContImgSize">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:src="@drawable/ic_autorenew"
+                tools:ignore="ContentDescription">
+
+            </ImageView>
+
+            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                android:id="@+id/sizeUpdateRotate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgUpdate"
+                android:layout_margin="10dp"
+                android:layout_weight="5"
+                app:dsb_allowTrackClickToDrag="true"
+                app:dsb_indicatorColor="@color/colorAccent"
+                app:dsb_indicatorTextAppearance="@style/CustomFloaterTextAppearance"
+                app:dsb_max="360"
+                app:dsb_min="0"
+                app:dsb_progressColor="@color/colorPrimary"
+                app:dsb_rippleColor="#FF7788FF"
+                app:dsb_value="0"
+                tools:ignore="ObsoleteLayoutParam" />
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sizeUpdateImage"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_below="@+id/ContImgRotate">
 
             <ImageButton
                 android:id="@+id/btnPreviousToolImage"
@@ -48,7 +98,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_reply" />
+                android:src="@drawable/ic_reply"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
 
@@ -58,7 +109,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_spellcheck" />
+                android:src="@drawable/ic_spellcheck"
+                tools:ignore="ContentDescription" />
 
             <ImageButton
                 android:id="@+id/btnDestroyImage"
@@ -67,10 +119,21 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_cancel" />
+                android:src="@drawable/ic_cancel"
+                tools:ignore="ContentDescription" />
 
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="ContentDescription" />
     </RelativeLayout>
 
 

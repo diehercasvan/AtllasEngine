@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,6 +22,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import class_project.General;
 import class_project.MyDragListener;
@@ -145,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -170,7 +175,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+
         // Handle navigation view item clicks here.
+        final List<MenuItem> items=new ArrayList<>();
+        Menu menu=navigationView.getMenu();
+
+
+
+        for(int i=0; i<menu.size(); i++){
+            items.add(menu.getItem(i));
+        }
+
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
@@ -189,6 +205,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+        item.setChecked(true);
+        int position=items.indexOf(item);
+
+        Log.i("position",position+"");
+
         return true;
     }
 
