@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.edibca.atlasengine.*;
 
@@ -36,6 +37,12 @@ public class General {
     public static final String NAME_FOLDER_MAIL="Pictures";
     public static String[] MAIL_CONTENT= new String []{"","Atlas ",""};
     public static String NAME_FOLDER="Atlas";
+    public static VideoView VIDEO_VIEW=null;
+    //Variables Video
+    public static String sUrl;
+    public static int iSeconds;
+
+
     //References images
     public static int iImageGridView[] =
             {

@@ -23,11 +23,11 @@
 
         <fragment
             android:id="@+id/fragment_InfoImage1"
-            android:name="fragments.GalleryFragment"
+            android:name="fragments.VideoFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="ObsoleteLayoutParam"
-            tools:layout="@layout/fragment_gallery" />
+            tools:layout="@layout/fragment_video" />
     </FrameLayout>
 
     <FrameLayout
