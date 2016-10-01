@@ -1,17 +1,21 @@
 package fragments;
 
 
-import android.os.Bundle;
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.ImageView;
 
-import com.edibca.atlasengine.*;
+import com.edibca.atlasengine.FullscreenImage;
+import com.edibca.atlasengine.R;
 
 import class_project.Animation_general;
+import class_project.General;
+import class_project.ZoomImage;
 
 
 public class ImageFragment extends Fragment implements View.OnClickListener {
@@ -19,6 +23,7 @@ public class ImageFragment extends Fragment implements View.OnClickListener {
     private ImageView[] imageViews;
     private View view;
     private Animation_general animation_general;
+    private Activity activity = General.ACTIVITY;
 
 
     public ImageFragment() {
@@ -40,23 +45,36 @@ public class ImageFragment extends Fragment implements View.OnClickListener {
         imageViews[1] = (ImageView) view.findViewById(R.id.imgTexts);
         imageViews[2] = (ImageView) view.findViewById(R.id.imgContainer);
         imageViews[0].setOnClickListener(this);
-        animation_general=new Animation_general();
+        imageViews[2].setOnClickListener(this);
+        animation_general = new Animation_general();
 
     }
 
     @Override
     public void onClick(View v) {
-        if (imageViews[1].getVisibility() == View.GONE) {
-            imageViews[1].startAnimation(animation_general.selectAnimation(0));
-            imageViews[1].setVisibility(View.VISIBLE);
-            imageViews[0].setRotation(180);
+        switch (v.getId()) {
+            case R.id.imgBtn:
+                if (imageViews[1].getVisibility() == View.GONE) {
+                    imageViews[1].startAnimation(animation_general.selectAnimation(0));
+                    imageViews[1].setVisibility(View.VISIBLE);
+                    imageViews[0].setRotation(180);
 
 
-        } else {
+                } else {
 
-            imageViews[1].startAnimation(animation_general.selectAnimation(1));
-            imageViews[1].setVisibility(View.GONE);
-            imageViews[0].setRotation(0);
+                    imageViews[1].startAnimation(animation_general.selectAnimation(1));
+                    imageViews[1].setVisibility(View.GONE);
+                    imageViews[0].setRotation(0);
+                }
+                break;
+            case R.id.imgContainer:
+                General.DRAWABLE = imageViews[2].getDrawable();
+                Intent intent = new Intent(activity, FullscreenImage.class);
+                activity.startActivity(intent);
+                break;
         }
+
     }
+
+
 }

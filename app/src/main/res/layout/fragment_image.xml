@@ -20,8 +20,9 @@
             android:src="@drawable/img1"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:contentDescription="Hola"
-            tools:ignore="HardcodedText" />
+            android:layout_gravity="center_horizontal"
+
+            tools:ignore="ContentDescription" />
 
 
 
@@ -32,9 +33,9 @@
             android:src="@drawable/img1s"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:contentDescription="Hola"
 
-            tools:ignore="HardcodedText" />
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
