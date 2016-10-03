@@ -3,6 +3,7 @@ package adapter;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     private ArrayList<DTO_Images> listImage;
     private Context context;
-    private ImageView imageViewSelection;
+    private ImageView [] imageViews;
 
-    public ListAdapter(Context context, ArrayList<DTO_Images> images, ImageView imageView) {
+
+    public ListAdapter(Context context, ArrayList<DTO_Images> images, ImageView[] imgs ) {
         this.context = context;
         this.listImage = images;
-        this.imageViewSelection = imageView;
+        this.imageViews=imgs;
+
     }
 
 
@@ -40,15 +43,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.imageView.setImageResource(listImage.get(position).getiURL());
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ImageView img=null;
-                img=(ImageView)view.findViewById(view.getId());
-                Drawable drawable=img.getDrawable();
-                imageViewSelection.setImageDrawable(drawable);
+
+                imageViews[2].setImageDrawable(null);
+                imageViews[2].setImageResource(listImage.get(position).getiURL());
+
+                imageViews[3].setImageDrawable(null);
+                imageViews[3].setImageResource(listImage.get(position).getiURLSignaling());
+
             }
         });
     }
@@ -58,8 +64,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public int getItemCount() {
         return listImage.size();
     }
-
-
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {

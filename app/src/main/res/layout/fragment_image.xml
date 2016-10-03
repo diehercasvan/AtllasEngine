@@ -1,17 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragments.ImageFragment">
+    tools:context="fragments.GalleryFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessLeaf,UselessParent">
-
-
 
         <ImageView
             android:id="@+id/imgContainer"
@@ -21,7 +20,6 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-
             tools:ignore="ContentDescription" />
 
 
@@ -33,7 +31,6 @@
             android:src="@drawable/img1s"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-
             android:visibility="gone"
             tools:ignore="ContentDescription" />
         <ImageView

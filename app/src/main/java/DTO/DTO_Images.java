@@ -5,8 +5,17 @@ package DTO;
  */
 
 public class DTO_Images {
-     private int iURL;
-     private String sSignpost;
+    private int iURL;
+    private int iURLSignaling;
+    private String sSignpost;
+
+    public int getiURLSignaling() {
+        return iURLSignaling;
+    }
+
+    public void setiURLSignaling(int iURLSignaling) {
+        this.iURLSignaling = iURLSignaling;
+    }
 
     public int getiURL() {
         return iURL;

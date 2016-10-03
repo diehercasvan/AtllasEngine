@@ -30,6 +30,14 @@
         <item name="android:windowEnterAnimation">@anim/slide_up</item>
         <item name="android:windowExitAnimation">@anim/slide_down</item>
     </style>
+    <style name="AnimationSlide">
+        <item name="android:windowEnterAnimation">@anim/slide_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_right</item>
+    </style>
+    <style name="AnimationFade1">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
     <style name="FullscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="android:windowActionBar">false</item>

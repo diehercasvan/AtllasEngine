@@ -26,14 +26,15 @@ public class Animation_general {
                     iAnimation=R.anim.slide_down;
                     break;
                 case 3:
-                    iAnimation=R.anim.slide_left;
-                    break;
-                case 4:
-                    iAnimation=R.anim.slide_right;
-                    break;
-                case 5:
                     iAnimation=R.anim.slide_up;
                     break;
+                case 4:
+                    iAnimation=R.anim.slide_left;
+                    break;
+                case 5:
+                    iAnimation=R.anim.slide_right;
+                    break;
+
             }
         animation= AnimationUtils.loadAnimation(General.CONTEXT,iAnimation);
         return  animation;

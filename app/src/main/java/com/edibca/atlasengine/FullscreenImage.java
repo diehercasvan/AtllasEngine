@@ -25,7 +25,7 @@ public class FullscreenImage extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-        this.getWindow().setWindowAnimations(R.style.DialogAnimation);
+        //this.getWindow().setWindowAnimations(R.style.AnimationFade1);
     }
 
 }

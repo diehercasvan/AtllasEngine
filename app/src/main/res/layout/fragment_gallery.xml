@@ -3,51 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragments.GalleryFragment">
+    tools:context="fragments.ImageFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
-            android:elevation="4dp"
-            tools:ignore="UnusedAttribute">
+            android:layout_weight="5"
+            tools:ignore="UselessLeaf,UselessParent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/multiImgContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/img1"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/multiImgTexts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/img1s"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/BtnMultiImgText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_margin="@dimen/fab_margin"
-                android:src="@drawable/ic_signal_image"
-                tools:ignore="ContentDescription" />
+                android:padding="@dimen/fab_margin"
+                app:srcCompat="@drawable/ic_signal_image"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
 
             <ImageView
-                android:id="@+id/imgContainerList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:foregroundGravity="center"
-                app:srcCompat="@mipmap/ic_launcher" />
+                app:srcCompat="@drawable/ic_apps"
+                android:layout_alignBottom="@+id/BtnMultiImgText"
+                android:layout_toRightOf="@+id/BtnMultiImgText"
+                android:id="@+id/BtnMultiImg"
+                tools:ignore="ContentDescription,RtlHardcoded,VectorDrawableCompat"
+                android:layout_alignTop="@+id/BtnMultiImgText"
+                android:padding="@dimen/fab_margin" />
+
         </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerImage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
             android:scrollbars="vertical"
-            android:layout_margin="10dp"
-            android:layout_weight="1" />
+            android:visibility="gone"
+            tools:ignore="ObsoleteLayoutParam" />
     </LinearLayout>
-
 </FrameLayout>
+
+

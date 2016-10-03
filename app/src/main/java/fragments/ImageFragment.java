@@ -9,14 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.edibca.atlasengine.FullscreenImage;
-import com.edibca.atlasengine.R;
+import com.edibca.atlasengine.*;
 
 import class_project.Animation_general;
 import class_project.General;
-import class_project.ZoomImage;
-
 
 public class ImageFragment extends Fragment implements View.OnClickListener {
 
@@ -24,6 +21,7 @@ public class ImageFragment extends Fragment implements View.OnClickListener {
     private View view;
     private Animation_general animation_general;
     private Activity activity = General.ACTIVITY;
+
 
 
     public ImageFragment() {
@@ -44,6 +42,7 @@ public class ImageFragment extends Fragment implements View.OnClickListener {
         imageViews[0] = (ImageView) view.findViewById(R.id.imgBtn);
         imageViews[1] = (ImageView) view.findViewById(R.id.imgTexts);
         imageViews[2] = (ImageView) view.findViewById(R.id.imgContainer);
+
         imageViews[0].setOnClickListener(this);
         imageViews[2].setOnClickListener(this);
         animation_general = new Animation_general();
