@@ -84,7 +84,7 @@ public class GalleryFragment extends Fragment implements View.OnClickListener {
         imageViews[0].setOnClickListener(this);
         imageViews[1].setOnClickListener(this);
         imageViews[2].setOnClickListener(this);
-        
+
         animation_general = new Animation_general();
     }
 
