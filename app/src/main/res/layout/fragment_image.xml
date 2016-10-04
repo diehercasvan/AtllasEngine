@@ -7,43 +7,55 @@
     tools:context="fragments.GalleryFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <RelativeLayout
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessLeaf,UselessParent">
+        card_view:cardCornerRadius="2dp"
+        android:elevation="8dp"
+        >
 
-        <ImageView
-            android:id="@+id/imgContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img1"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            tools:ignore="ContentDescription" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessLeaf,UselessParent">
 
 
+            <ImageView
+                android:id="@+id/imgContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img1"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/imgTexts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img1s"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:visibility="gone"
-            tools:ignore="ContentDescription" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_signal_image"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/imgBtn"
-            android:layout_margin="@dimen/fab_margin"
-            android:padding="@dimen/fab_margin"
-            tools:ignore="ContentDescription,VectorDrawableCompat" />
 
-    </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imgTexts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img1s"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_signal_image"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/imgBtn"
+                android:layout_margin="@dimen/fab_margin"
+                android:padding="@dimen/fab_margin"
+                tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
 </FrameLayout>
