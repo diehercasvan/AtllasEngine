@@ -10,5 +10,5 @@
     <dimen name="sizeButtonColor">50dp</dimen>
     <dimen name="sizeImage">80dp</dimen>
     <dimen name="sizeListCardView">200dp</dimen>
-    <dimen name="sizeTextCardView">100dp</dimen>
+        <dimen name="sizeTextCardView">100dp</dimen>
 </resources>

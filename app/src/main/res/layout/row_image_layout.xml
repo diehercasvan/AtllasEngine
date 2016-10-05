@@ -1,53 +1,96 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/sizeListCardView"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginTop="5dp"
-    app:cardCornerRadius="5dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-    <ScrollView
+    >
+
+    <android.support.v7.widget.CardView
+
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
 
-        <TextView
-            android:id="@+id/titleText"
+        app:cardCornerRadius="5dp">
+
+
+        <RelativeLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/fab_margin"
-            android:layout_weight="2"
-            android:text="TextView"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText,ObsoleteLayoutParam"
-            tools:targetApi="lollipop" />
-
-    </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="UselessLeaf,UselessParent">
+            android:layout_height="match_parent"
+            tools:ignore="UselessLeaf,UselessParent">
 
 
-        <ImageView
-            android:id="@+id/ImgContainerList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/img1"
-            tools:ignore="ContentDescription,ObsoleteLayoutParam" />
+            <ImageView
+                android:id="@+id/imgList"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/sizeListCardView"
+                app:srcCompat="@drawable/img1"
+                tools:ignore="ContentDescription"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <ScrollView
+
+                android:id="@+id/scrollView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sizeListCardView"
+                android:background="@color/background_trans">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="@string/lorem_ipsum"
+                        android:textSize="12sp" />
 
 
-    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
 
-</android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/imgList"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="6"
+                    android:text="Title "
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/imgBtnInfoText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_info2"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

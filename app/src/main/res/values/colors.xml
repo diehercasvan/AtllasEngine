@@ -6,4 +6,5 @@
     <color name ="colorIcons">#FFFFFF</color>
     <color name="background_trans">#62666161</color>
     <color name="colorIconsTrans">#71000000</color>
+    <color name="colorText">#d4000000</color>
 </resources>

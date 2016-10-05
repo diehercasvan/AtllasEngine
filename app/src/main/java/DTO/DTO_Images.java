@@ -7,10 +7,28 @@ package DTO;
 public class DTO_Images {
     private int iURL;
     private int iURLSignaling;
+    private String sDescription;
+    private String sTitle;
     private String sSignpost;
 
     public int getiURLSignaling() {
         return iURLSignaling;
+    }
+
+    public String getsDescription() {
+        return sDescription;
+    }
+
+    public void setsDescription(String sDescription) {
+        this.sDescription = sDescription;
+    }
+
+    public String getsTitle() {
+        return sTitle;
+    }
+
+    public void setsTitle(String sTitle) {
+        this.sTitle = sTitle;
     }
 
     public void setiURLSignaling(int iURLSignaling) {
