@@ -1,9 +1,6 @@
 package adapter;
 
 import android.app.Activity;
-
-import com.edibca.atlasengine.*;
-
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,12 +10,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.edibca.atlasengine.FullscreenImage;
+import com.edibca.atlasengine.R;
 
 import java.util.ArrayList;
 
 import DTO.DTO_Images;
 import class_project.General;
+import fragments.FragmentsAlert;
 
 /**
  * Created by DIEGO H CASALLAS on 4/10/2016.
@@ -28,6 +28,7 @@ public class List_Image_Adapter extends ArrayAdapter<DTO_Images> {
     private final Activity context;
     private ArrayList<DTO_Images> arrayListImage;
     private View row;
+    public DTO_Images dto_images,dtoImages;
 
 
     public List_Image_Adapter(Activity context, ArrayList<DTO_Images> arrayList) {
@@ -41,9 +42,10 @@ public class List_Image_Adapter extends ArrayAdapter<DTO_Images> {
 
     public View getView(final int position, View view, ViewGroup parent) {
 
-        DTO_Images dto_images = getItem(position);
+        dto_images = getItem(position);
         row = view;
-         ViewHolder mainviewHolder = null;
+        ViewHolder mainviewHolder = null;
+
         if (row == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             row = inflater.inflate(R.layout.row_image_layout, parent, false);
@@ -76,19 +78,16 @@ public class List_Image_Adapter extends ArrayAdapter<DTO_Images> {
             @Override
             public void onClick(View v) {
 
-                String sPosition = String.valueOf(position);
-                ScrollView scrollView = finalMainviewHolder.scrollView;
 
-                if (scrollView.getVisibility() == View.GONE) {
-                    scrollView.setVisibility(View.VISIBLE);
-                } else {
-                    scrollView.setVisibility(View.GONE);
-                }
-
-                Toast.makeText(context, "Image drawable" + finalMainviewHolder.scrollView.getTag(), Toast.LENGTH_LONG).show();
+                dtoImages =new DTO_Images();
+                dtoImages.setiURL(getItem(position).getiURL());
+                dtoImages.setsDescription(getItem(position).getsDescription());
+                dtoImages.setsTitle(getItem(position).getsTitle());
+                General.DTO_IMAGES=dtoImages;
+                FragmentsAlert fragmentsAlert=new FragmentsAlert();
+                fragmentsAlert.setDialogFragment(4);
             }
         });
-
 
 
         return row;
@@ -101,7 +100,8 @@ public class List_Image_Adapter extends ArrayAdapter<DTO_Images> {
         TextView txtTitle;
         TextView txtDescription;
         ImageView imgBntInfo;
-        public ViewHolder(View v){
+
+        public ViewHolder(View v) {
             this.scrollView = (ScrollView) row.findViewById(R.id.scrollView);
             this.txtTitle = (TextView) row.findViewById(R.id.textTitle);
             this.imageView = (ImageView) row.findViewById(R.id.imgList);

@@ -13,6 +13,8 @@ import android.widget.VideoView;
 
 import com.edibca.atlasengine.*;
 
+import DTO.DTO_Images;
+
 /**
  * Created by DIEGO CASALLAS  on 22/09/2016.
  */
@@ -41,6 +43,8 @@ public class General {
     //Variables Video
     public static String sUrl;
     public static int iSeconds;
+
+    public static DTO_Images DTO_IMAGES;
 
 
     //References images

@@ -28,6 +28,10 @@ public  class FragmentsAlert {
                 FragmentToolImage fragmentToolImage = new FragmentToolImage();
                 dialogFragment=fragmentToolImage;
                 break;
+            case 4:
+                FragmentCardViewDescription fragmentCardViewDescription = new FragmentCardViewDescription();
+                dialogFragment=fragmentCardViewDescription;
+                break;
         }
         dialogFragment.show(fm, "Sample Fragment");
 
