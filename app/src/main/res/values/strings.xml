@@ -168,4 +168,22 @@
         <item>#FFFFF0</item>
         <item>#FFFFFF</item>
     </string-array>
+
+    //data menu menu navigation drawer
+
+    <string name="option0">Video content</string>
+    <string name="option1">Image content</string>
+    <string name="option2">Content multiple images</string>
+    <string name="option3">Content multiple images 2</string>
+    <string name="option4">Content multiple pages</string>
+    <string name="option5">Content PDF</string>
+
+    <string-array name="title">
+        <item>Title 1</item>
+        <item>Title 2</item>
+        <item>Title 3</item>
+        <item>Title 4</item>
+        <item>Title 5</item>
+        <item>Title 6</item>
+    </string-array>
 </resources>

@@ -13,6 +13,7 @@ import android.widget.VideoView;
 
 import com.edibca.atlasengine.*;
 
+import DTO.DTO_General;
 import DTO.DTO_Images;
 
 /**
@@ -45,12 +46,21 @@ public class General {
     public static int iSeconds;
 
     public static DTO_Images DTO_IMAGES;
+    public static DTO_General DTO_GENERAL;
 
 
     //References images
     public static int iImageGridView[] =
             {
-                    R.drawable.ic_draft,
+                    R.drawable.ic_icon,
+                    R.drawable.ic_icon1,
+                    R.drawable.ic_icon2,
+                    R.drawable.ic_icon3,
+                    R.drawable.ic_icon4,
+                    R.drawable.ic_icon5,
+                    R.drawable.ic_icon6,
+                    R.drawable.ic_icon,
+                    R.drawable.ic_info,
                     R.drawable.ic_crop,
                     R.drawable.ic_check_circle_black,
                     R.drawable.ic_draw,
@@ -61,7 +71,7 @@ public class General {
                     R.drawable.ic_menu_manage,
                     R.drawable.ic_menu_share,
                     R.drawable.ic_menu_send,
-                    R.drawable.ic_menu_slideshow
+                    R.drawable.ic_menu_slideshow,
             };
 
     public static boolean bValidateSelectionClick = true;

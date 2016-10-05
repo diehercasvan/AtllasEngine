@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.edibca.atlasengine.R;
 
 import DTO.DTO_Images;
+import class_project.Animation_general;
 import class_project.General;
 
 
@@ -22,10 +23,12 @@ import class_project.General;
 public class FragmentCardViewDescription extends DialogFragment implements View.OnClickListener {
 
     private View view;
-    private ImageView imageView;
+    private ImageView [] imageViews;
     private TextView[] textViews;
     private DTO_Images dto;
+    private Animation_general animation_general;
     int mNum;
+
 
     public FragmentCardViewDescription() {
         // Required empty public constructor
@@ -106,15 +109,40 @@ public class FragmentCardViewDescription extends DialogFragment implements View.
         textViews = new TextView[2];
         textViews[0] = (TextView) view.findViewById(R.id.textTitleDescription);
         textViews[1] = (TextView) view.findViewById(R.id.textDescription);
-        imageView = (ImageView) view.findViewById(R.id.imgListDescription);
+
+
         textViews[0].setText(dto.getsTitle());
         textViews[1].setText(dto.getsDescription());
-        imageView.setImageResource(dto.getiURL());
+        imageViews=new ImageView[3];
+        imageViews[0] = (ImageView) view.findViewById(R.id.imgListDescription);
+        imageViews[0].setImageResource(dto.getiURL());
+
+        imageViews[1] = (ImageView) view.findViewById(R.id.imgListSignal);
+        imageViews[1].setImageResource(dto.getiURLSignaling());
+        imageViews[2] = (ImageView) view.findViewById(R.id.imgBtnSignal);
+
+        imageViews[2].setOnClickListener(this);
+
+        animation_general = new Animation_general();
+
+
     }
 
     @Override
     public void onClick(View view) {
 
+        if (imageViews[1].getVisibility() == View.GONE) {
+            imageViews[1].startAnimation(animation_general.selectAnimation(0));
+            imageViews[1].setVisibility(View.VISIBLE);
+            imageViews[2].setRotation(180);
+
+
+        } else {
+
+            imageViews[1].startAnimation(animation_general.selectAnimation(1));
+            imageViews[1].setVisibility(View.GONE);
+            imageViews[2].setRotation(0);
+        }
 
     }
 }

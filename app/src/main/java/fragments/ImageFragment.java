@@ -2,13 +2,14 @@ package fragments;
 
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
 import com.edibca.atlasengine.FullscreenImage;
 import com.edibca.atlasengine.*;
 
@@ -21,7 +22,6 @@ public class ImageFragment extends Fragment implements View.OnClickListener {
     private View view;
     private Animation_general animation_general;
     private Activity activity = General.ACTIVITY;
-
 
 
     public ImageFragment() {
@@ -47,6 +47,8 @@ public class ImageFragment extends Fragment implements View.OnClickListener {
         imageViews[2].setOnClickListener(this);
         animation_general = new Animation_general();
 
+        imageViews[1].setImageResource(General.DTO_GENERAL.getiUriImageSignal());
+        imageViews[2].setImageResource(General.DTO_GENERAL.getiUriImage());
     }
 
     @Override

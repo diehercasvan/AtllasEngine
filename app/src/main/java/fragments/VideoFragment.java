@@ -17,6 +17,7 @@ import android.widget.VideoView;
 import com.edibca.atlasengine.FullscreenVideo;
 import com.edibca.atlasengine.R;
 
+import DTO.DTO_General;
 import class_project.General;
 
 
@@ -26,6 +27,7 @@ public class VideoFragment extends Fragment  implements View.OnClickListener{
     private ImageView btnFullscreen;
     private View view;
     private Activity activity= General.ACTIVITY;
+    private DTO_General dto_general=General.DTO_GENERAL;
 
 
     @Override
@@ -44,7 +46,7 @@ public class VideoFragment extends Fragment  implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         if(savedInstanceState==null){
 
-            General.sUrl="android.resource://"+activity.getPackageName()+"/"+R.raw.ateroesclerosis;
+            General.sUrl="android.resource://"+activity.getPackageName()+"/"+dto_general.getiUriVideo();
             General.iSeconds=0;
 
 

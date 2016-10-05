@@ -2,19 +2,20 @@ package fragments;
 
 
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
+import android.widget.TextView;
 
-import com.edibca.atlasengine.*;
+import com.edibca.atlasengine.R;
 
+import class_project.General;
 
 
 public class TextInfoFragment extends Fragment {
 
-    private WebView view;
+    private View view;
 
     public TextInfoFragment() {
         // Required empty public constructor
@@ -22,10 +23,16 @@ public class TextInfoFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_text_info, container, false);
+        view=inflater.inflate(R.layout.fragment_text_info,container,false);
+        loadView();
+        return view;
+    }
+    private void loadView(){
+        TextView textView=(TextView)view.findViewById(R.id.textInfo);
+        textView.setText(General.DTO_GENERAL.getsTextInfo());
+
     }
 
 }

@@ -32,23 +32,8 @@ public class GalleryFragment extends Fragment implements View.OnClickListener {
     private Animation_general animation_general;
     private Activity activity = General.ACTIVITY;
     private RecyclerView recyclerView;
-    private final int images_id[] = {
-            R.drawable.img1,
-            R.drawable.img2,
-            R.drawable.img3,
-            R.drawable.img4,
-            R.drawable.img5,
-            R.drawable.img6
-    };
-    private final int images_signaling_id[] = {
-            R.drawable.img1s,
-            R.drawable.img2s,
-            R.drawable.img3s,
-            R.drawable.img4s,
-            R.drawable.img5s,
-            R.drawable.img6s
-
-    };
+    private final ArrayList<Integer> images_id =General.DTO_GENERAL.getiUriImages();
+    private final ArrayList<Integer>  images_signaling_id =General.DTO_GENERAL.getiUriImagesSignal();
     private View view;
     private Context context = General.CONTEXT;
 
@@ -79,8 +64,8 @@ public class GalleryFragment extends Fragment implements View.OnClickListener {
         imageViews[3] = (ImageView) view.findViewById(R.id.multiImgTexts);
 
 
-        imageViews[2].setImageResource(images_id[0]);
-        imageViews[3].setImageResource(images_signaling_id[0]);
+        imageViews[2].setImageResource(images_id.get(0));
+        imageViews[3].setImageResource(images_signaling_id.get(0));
         imageViews[0].setOnClickListener(this);
         imageViews[1].setOnClickListener(this);
         imageViews[2].setOnClickListener(this);
@@ -105,10 +90,10 @@ public class GalleryFragment extends Fragment implements View.OnClickListener {
 
         ArrayList list_images = new ArrayList<>();
 
-        for (int i = 0; i < images_id.length; i++) {
+        for (int i = 0; i < images_id.size(); i++) {
             DTO_Images dto_images = new DTO_Images();
-            dto_images.setiURL(images_id[i]);
-            dto_images.setiURLSignaling(images_signaling_id[i]);
+            dto_images.setiURL(images_id.get(i));
+            dto_images.setiURLSignaling(images_signaling_id.get(i));
             list_images.add(dto_images);
         }
 

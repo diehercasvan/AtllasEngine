@@ -7,15 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.edibca.atlasengine.*;
-
+import com.edibca.atlasengine.R;
 import java.util.ArrayList;
-
 import DTO.DTO_Images;
 import adapter.List_Image_Adapter;
 import class_project.General;
@@ -30,25 +25,14 @@ public class FragmentList_image extends Fragment {
     private Activity activity = General.ACTIVITY;
     private ArrayList<DTO_Images> arrayList;
     private DTO_Images dto_images;
+    private ArrayList<Integer> iImgId=General.DTO_GENERAL.getiUriImages();
+    private ArrayList<Integer> iImgSignaling=General.DTO_GENERAL.getiUriImagesSignal();
+
+    private ArrayList<String> sDescription=General.DTO_GENERAL.getsDescriptions();
+    private ArrayList<String> sTitle=General.DTO_GENERAL.getsTitles();
 
 
-    String[] itemname = {
-            "Safari",
-            "Camera",
-            "Global",
-            "FireFox",
-            "UC Browser",
-            "Android Folder"
-    };
 
-    Integer[] imgid = {
-            R.drawable.img1s,
-            R.drawable.img2s,
-            R.drawable.img3,
-            R.drawable.img4s,
-            R.drawable.img5,
-            R.drawable.img6s
-    };
 
     public FragmentList_image() {
         // Required empty public constructor
@@ -65,11 +49,12 @@ public class FragmentList_image extends Fragment {
 
     private void loadView() {
         arrayList =new ArrayList<>();
-        for (int i = 0; i < imgid.length; i++) {
+        for (int i = 0; i < iImgId.size(); i++) {
             dto_images = new DTO_Images();
-            dto_images.setiURL(imgid[i]);
-            dto_images.setsTitle(itemname[i]);
-            dto_images.setsDescription(itemname[i]);
+            dto_images.setiURL(iImgId.get(i));
+            dto_images.setsTitle(sTitle.get(i));
+            dto_images.setsDescription(sDescription.get(i));
+            dto_images.setiURLSignaling(iImgSignaling.get(i));
             arrayList.add(dto_images);
         }
 

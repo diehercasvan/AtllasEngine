@@ -83,6 +83,7 @@ public class List_Image_Adapter extends ArrayAdapter<DTO_Images> {
                 dtoImages.setiURL(getItem(position).getiURL());
                 dtoImages.setsDescription(getItem(position).getsDescription());
                 dtoImages.setsTitle(getItem(position).getsTitle());
+                dtoImages.setiURLSignaling(getItem(position).getiURLSignaling());
                 General.DTO_IMAGES=dtoImages;
                 FragmentsAlert fragmentsAlert=new FragmentsAlert();
                 fragmentsAlert.setDialogFragment(4);

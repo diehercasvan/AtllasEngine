@@ -7,4 +7,8 @@
     <color name="background_trans">#62666161</color>
     <color name="colorIconsTrans">#71000000</color>
     <color name="colorText">#d4000000</color>
+
+    <color name="startColor">#3F51B5</color>
+    <color name="centerColor">#FF29399E</color>
+    <color name="endColor">#303F9F</color>
 </resources>
